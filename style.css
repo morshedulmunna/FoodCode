@@ -35,3 +35,18 @@ body {
   color: #fff !important;
   cursor: pointer;
 }
+
+/* Break Fast lanch Dinnar */
+#eat_time {
+  text-align: center;
+  width: 100%;
+  margin: auto;
+}
+#eat_time a {
+  text-decoration: none;
+  margin-left: 2rem;
+  font-weight: 600;
+}
+.active {
+  color: #f3254e;
+}
