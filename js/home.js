@@ -17,7 +17,7 @@ function getData(item) {
   fetch(url)
     .then((res) => res.json())
     .then((data) => {
-      const mainData = data.meals.slice(1, 7);
+      const mainData = data.meals.slice(1, 10);
       foodContainer.innerHTML = "";
       mainData.map((eachData) => {
         displayPost(eachData);
@@ -26,12 +26,12 @@ function getData(item) {
 }
 
 function displayPost(eachData) {
-  console.log(eachData);
-
   const foodContainer = document.getElementById("foodContainer");
   const div = document.createElement("div");
   div.classList.add("food_item");
   const { strMealThumb, strMeal, strInstructions } = eachData;
+  const price = parseInt(Math.random(10, 100) * 100);
+
   div.innerHTML = `
   <img
     class="w-50"
@@ -42,7 +42,7 @@ function displayPost(eachData) {
     <p class="w-75 py-3 m-auto">
     ${strInstructions.slice(0, 150)}
     </p>
-    <h3>$ <span>18.00</span></h3>
+    <h3>$<span>${price}</span></h3>
   `;
   foodContainer.appendChild(div);
 }
@@ -51,8 +51,12 @@ const chicken = document.getElementById("chicken");
 const fish = document.getElementById("fish");
 const beef = document.getElementById("beef");
 
-// Chicken
+// Directly locading data
 getData("chicken");
+// Chicken
+chicken.addEventListener("click", () => {
+  getData("chicken");
+});
 // Fish
 fish.addEventListener("click", () => {
   getData("fish");

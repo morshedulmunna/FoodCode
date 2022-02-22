@@ -63,7 +63,6 @@ body {
 .food__section {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  padding: 2rem;
   text-align: center;
 }
 .food_item {
@@ -73,7 +72,6 @@ body {
   border-radius: 10px;
 }
 .food__section .food_item p {
-  /* text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden; */
+  text-align: justify;
+  padding: 1rem;
 }
