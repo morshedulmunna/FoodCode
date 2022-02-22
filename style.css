@@ -67,6 +67,7 @@ body {
   text-align: center;
 }
 .food_item {
+  margin-top: 5rem;
 }
 .food__section .food_item img {
   border-radius: 10px;
