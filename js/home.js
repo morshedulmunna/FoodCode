@@ -1,16 +1,65 @@
-var header = document.getElementById("eat_time");
-var tagA = header.getElementsByClassName("tagA");
-console.log(tagA);
+const header = document.getElementById("eat_time");
+const tagA = header.getElementsByClassName("tagA");
 
-for (var i = 0; i < tagA.length; i++) {
+for (let i = 0; i < tagA.length; i++) {
   tagA[i].addEventListener("click", function () {
     //   color Change on click
-    var current = document.getElementsByClassName("active");
+    let current = document.getElementsByClassName("active");
     current[0].className = current[0].className.replace(" active", "");
     this.className += " active";
-    //   color Change on click end
-    //
-    //
-    // Data Added on click
   });
 }
+
+// Data load and display
+function getData(item) {
+  const foodContainer = document.getElementById("foodContainer");
+  let url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${item}`;
+  fetch(url)
+    .then((res) => res.json())
+    .then((data) => {
+      const mainData = data.meals.slice(1, 7);
+      foodContainer.innerHTML = "";
+
+      mainData.map((eachData) => {
+        displayPost(eachData);
+      });
+    });
+}
+
+function displayPost(eachData) {
+  console.log(eachData);
+
+  const foodContainer = document.getElementById("foodContainer");
+  const div = document.createElement("div");
+  div.classList.add("food_item");
+  const { strMealThumb, strMeal, strInstructions } = eachData;
+  div.innerHTML = `
+  <img
+    class="w-50"
+    src="${strMealThumb}"
+    alt=""
+    />
+    <h4 class="pt-3"> ${strMeal} </h4>
+    <p class="w-75 py-3 m-auto">
+    ${strInstructions}
+    </p>
+    <h3>$ <span>18.00</span></h3>
+  `;
+  foodContainer.appendChild(div);
+}
+
+const chicken = document.getElementById("chicken");
+const fish = document.getElementById("fish");
+const beef = document.getElementById("beef");
+// Chicken
+chicken.addEventListener("click", () => {
+  getData("chicken");
+});
+// Fish
+fish.addEventListener("click", () => {
+  getData("fish");
+});
+// Beef
+beef.addEventListener("click", () => {
+  getData("beef");
+});

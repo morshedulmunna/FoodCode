@@ -47,6 +47,30 @@ body {
   margin-left: 2rem;
   font-weight: 600;
 }
+
 .active {
   color: #f3254e;
+}
+/* .active::after {
+  content: "";
+  width: 80px;
+  margin: 0 auto;
+  height: 2px;
+  background-color: #ff4565;
+  display: inline-block;
+} */
+
+.food__section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 2rem;
+  text-align: center;
+}
+.food_item {
+}
+.food__section .food_item img {
+  border-radius: 10px;
+}
+.food__section .food_item p {
+  text-overflow: ellipsis;
 }
