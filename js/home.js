@@ -19,7 +19,6 @@ function getData(item) {
     .then((data) => {
       const mainData = data.meals.slice(1, 7);
       foodContainer.innerHTML = "";
-
       mainData.map((eachData) => {
         displayPost(eachData);
       });
@@ -41,7 +40,7 @@ function displayPost(eachData) {
     />
     <h4 class="pt-3"> ${strMeal} </h4>
     <p class="w-75 py-3 m-auto">
-    ${strInstructions}
+    ${strInstructions.slice(0, 150)}
     </p>
     <h3>$ <span>18.00</span></h3>
   `;
@@ -51,10 +50,9 @@ function displayPost(eachData) {
 const chicken = document.getElementById("chicken");
 const fish = document.getElementById("fish");
 const beef = document.getElementById("beef");
+
 // Chicken
-chicken.addEventListener("click", () => {
-  getData("chicken");
-});
+getData("chicken");
 // Fish
 fish.addEventListener("click", () => {
   getData("fish");
