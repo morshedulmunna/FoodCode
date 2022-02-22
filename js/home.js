@@ -65,3 +65,37 @@ fish.addEventListener("click", () => {
 beef.addEventListener("click", () => {
   getData("beef");
 });
+
+const choiceMe = [
+  {
+    title: "Quick Delivery",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the",
+    image: "https://i.ibb.co/ZKC536k/fast-delivery.png",
+  },
+  {
+    title: "A Good Auto Responder",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the",
+    image: "https://i.ibb.co/WzY2C6Z/chef-cook-food.png",
+  },
+  {
+    title: "Home Delivery",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the",
+    image: "https://i.ibb.co/cCY36Gv/home-delivery.png",
+  },
+];
+// Maping data and display
+choiceMe.map((eachData) => {
+  const choiceMeContainer = document.getElementById("choiceMeContainer");
+  const div = document.createElement("div");
+  div.classList.add("choice_me");
+  div.innerHTML = `
+  <img class="w-100" src="${eachData.image}" alt="" />
+  <h4 class="mt-4" >${eachData.title}</h4>
+  <p>${eachData.description}</p>
+  
+  `;
+  choiceMeContainer.appendChild(div);
+});

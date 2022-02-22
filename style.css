@@ -75,3 +75,10 @@ body {
   text-align: justify;
   padding: 1rem;
 }
+
+/* Why you choice me  */
+#choiceMeContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
