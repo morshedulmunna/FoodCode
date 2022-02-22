@@ -82,3 +82,62 @@ body {
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
 }
+
+footer {
+  width: 100%;
+
+  background-color: #343a40 !important;
+  margin-top: 5rem;
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  padding: 3rem 0rem;
+}
+.wrapper a {
+  text-decoration: none;
+  color: #fff;
+  line-height: 40px;
+}
+.wrapper a:hover {
+  color: #ff4565;
+  transition: ease 0.3s;
+}
+.details a {
+  display: block;
+}
+.temrs_policy ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+}
+.temrs_policy ul li {
+  list-style: none;
+}
+.temrs_policy a {
+  display: block;
+}
+
+/*___________ For Tablte Version Responsive ____________ */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .food__section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* _______ For Mobile Version Responsive ________ */
+@media screen and (max-width: 767px) {
+  .food__section {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  #choiceMeContainer {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .wrapper {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
