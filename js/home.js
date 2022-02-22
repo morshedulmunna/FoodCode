@@ -43,6 +43,7 @@ function displayPost(eachData) {
     ${strInstructions.slice(0, 150)}
     </p>
     <h3>$<span>${price}</span></h3>
+    <span class="def-btn order ">Order Now</span>
   `;
   foodContainer.appendChild(div);
 }
