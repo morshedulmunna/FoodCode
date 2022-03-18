@@ -30,7 +30,6 @@ function displayPost(eachData) {
   const div = document.createElement("div");
   div.classList.add("food_item");
   const { strMealThumb, strMeal, strInstructions } = eachData;
-  const price = parseInt(Math.random(10, 100) * 100);
 
   div.innerHTML = `
   <img
@@ -42,8 +41,6 @@ function displayPost(eachData) {
     <p class="w-75 py-3 m-auto">
     ${strInstructions.slice(0, 150)}
     </p>
-    <h3>$<span>${price}</span></h3>
-    <span class="def-btn order ">Order Now</span>
   `;
   foodContainer.appendChild(div);
 }
